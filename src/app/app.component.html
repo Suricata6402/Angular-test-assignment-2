@@ -1,0 +1,15 @@
+<table>
+    <tr *ngFor="let i of media.results">
+        <td>{{ i.language }}</td>
+        <td>{{ i.duration | duration }}</td>
+        <td>
+            <div class="container">
+                <div class="star" *ngFor="let j of toArray(5); let ind = index">
+                    <div [class.active]="ind+1 < i.rating">*</div>
+                </div>
+            </div>
+        </td>
+        <td> <a [href]="i.url">Link</a> </td>
+        <td>{{ i.created | date }}</td>
+    </tr>
+</table>
